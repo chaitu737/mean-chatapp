@@ -1,0 +1,33 @@
+{
+  "name": "mean-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.0",
+    "rxjs-compat": "^6.5.2",
+    "shortid": "^2.2.14",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitu737/mean-chatapp.git"
+  },
+  "author": "santhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chaitu737/mean-chatapp/issues"
+  },
+  "homepage": "https://github.com/chaitu737/mean-chatapp#readme"
+}
