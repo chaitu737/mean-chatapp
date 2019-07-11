@@ -14,7 +14,7 @@ router.post('/register',[
     check('firstName').isAlpha().isLength({mn:1}).withMessage('FirstName is required'),
     check('email').isEmail().isLength({min:1}).withMessage('Email is required'),
     check('lastName').isAlpha().withMessage('Last name is required'),
-    check('password').isAlphanumeric().withMessage('Password name is required'),
+    check('password').isAlpha().withMessage('Password name is required'),
     check('mobilenumber').isNumeric().isLength({min:10}).withMessage('Enter a valid Mobile Number')
 ],(req,res)=>{
     const errors=validationResult(req);

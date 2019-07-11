@@ -19,7 +19,7 @@
       <ul class="help-block">
         <li *ngIf="form.controls.firstName.errors?.required && form.controls.firstName.dirty">This field is required</li>
         <li *ngIf="form.controls.firstName.errors?.minlength && form.controls.firstName.dirty || form.controls.firstName.errors?.maxlength && form.controls.firstName.dirty ">Minimum characters: 3, Maximum characters: 15</li>
-        <li *ngIf="form.controls.firstName.errors?.validateUsername && form.controls.firstName.dirty">Username must not have any special characters</li>
+        <li *ngIf="form.controls.firstName.errors?.validateUsername && form.controls.firstName.dirty">firstName must not have any special characters</li>
         <li *ngIf="usernameMessage">{{ firstNameMessage }}</li>
       </ul>
     </div>
@@ -52,7 +52,7 @@
       <!-- Validation -->
       <ul class="help-block">
         <li *ngIf="form.controls.email.errors?.required && form.controls.email.dirty">This field is required</li>
-        <li *ngIf="(form.controls.email.errors?.minlength && form.controls.email.dirty || form.controls.email.errors?.maxlength && form.controls.email.dirty ) && form.controls.email.dirty">Minimum characters: 5, Maximum characters: 30</li>
+        <li *ngIf="(form.controls.email.errors?.minlength && form.controls.email.dirty || form.controls.email.errors?.maxlength && form.controls.email.dirty ) && form.controls.email.dirty">Minimum characters:1</li>
         <li *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty">This must be a valid e-mail</li>
         <li *ngIf="emailMessage">{{ emailMessage}}</li>
       </ul>
@@ -67,8 +67,8 @@
       <!-- Validation -->
       <ul class="help-block">
         <li *ngIf="form.controls.password.errors?.required && form.controls.password.dirty">This field is required</li>
-        <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty || form.controls.password.errors?.maxlength && form.controls.password.dirty ">Minimum characters: 8, Maximum characters: 35</li>
-        <li *ngIf="form.controls.password.errors?.validatePassword && form.controls.password.dirty">Password must be at least 8 characters but no more than 35</li>
+        <li *ngIf="form.controls.password.errors?.minlength && form.controls.password.dirty || form.controls.password.errors?.maxlength && form.controls.password.dirty ">Minimum characters: 8, No special symbols & numbers</li>
+        
       </ul>
     </div>
   </div>

@@ -38,6 +38,7 @@ app.all('*', (req, res, next) => {
       next();
     });
 app.use(bodyParser.json());
+app.use (cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/authentication', authentication);
 app.use('/chats', chats);
