@@ -34,7 +34,7 @@ let setServer = (server)=>{
           let userObj= {userId: currentUser.userId, fullName: fullName}
           userList.push(userObj)
           
-          socket.emit('online-user-list', userList);
+          io.emit('online-user-list', userList);
         
         //  socket.room ="Chat"
         //  socket.join(socket.room)

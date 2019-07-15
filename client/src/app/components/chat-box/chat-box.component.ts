@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef,AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewContainerRef,AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { SocketService } from 'src/app/services/socket.service';
 import { ToastrService } from 'ngx-toastr';
@@ -38,7 +38,7 @@ public scrollMe: ElementRef
     private authService: AuthService,
     private socketService: SocketService,
     private router: Router,
-    public toastr: ToastrService,
+    public toastr: ToastrService
 
   ) { 
     
@@ -48,6 +48,7 @@ public scrollMe: ElementRef
 
  
   ngOnInit() {
+  
 this.authToken = this.authService.authToken;
     
      this.userInfo = this.authService.user;
@@ -82,7 +83,7 @@ if(this.receiverId!=null && this.receiverId!=undefined && this.receiverId!=''){
   public verifyUserConfirmation: any = ()=>{
     this.socketService.verifyUser().subscribe((data)=>{
   
-      
+       
       this.disconnectedSocket = false;
       this.socketService.setUser(this.authToken);
     
@@ -96,11 +97,13 @@ if(this.receiverId!=null && this.receiverId!=undefined && this.receiverId!=''){
 
     this.socketService.onlineUserList()
       .subscribe((userList) => {
+        console.log(userList)
    
 
         this.userList = [];
 
         for (let x in userList) {
+          console.log(x);
 
           let temp = { 'userId': userList[x].userId, 'name': userList[x].fullName, 'unread': 0, 'chatting': false };
 
@@ -120,7 +123,7 @@ if(this.receiverId!=null && this.receiverId!=undefined && this.receiverId!=''){
     this.socketService.getChat(this.userInfo.userId, this.receiverId, this.pageValue * 10)
     .subscribe((apiResponse) => {
 
-      console.log(apiResponse);
+    
 
       if (apiResponse.status == 200) {
 
@@ -237,7 +240,7 @@ if(this.receiverId!=null && this.receiverId!=undefined && this.receiverId!=''){
     localStorage.clear();
     this.socketService.exitSocket();
     this.toastr.success('User loggedout succesfully');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     
   }
 
@@ -246,6 +249,7 @@ if(this.receiverId!=null && this.receiverId!=undefined && this.receiverId!=''){
 public showUserName= (name:string)=>{
   this.toastr.success('yOU ARE CHATTING WITH '+ name);
 }
+
 
 }
 

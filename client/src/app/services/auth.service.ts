@@ -6,7 +6,8 @@ import { HttpClient, HttpResponse, HttpHeaders, HttpParams } from '@angular/comm
   providedIn: 'root'
 })
 export class AuthService {
-  domain = "http://localhost:3000/"
+   domain = "http://localhost:3000/"
+  
   authToken;
   user;
 

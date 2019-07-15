@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { UserDetailsComponent } from './shared/user-details/user-details.component';
 import { FirstCharComponent } from './shared/first-char/first-char.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { FirstCharComponent } from './shared/first-char/first-char.component';
     BrowserAnimationsModule,
   ToastrModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
