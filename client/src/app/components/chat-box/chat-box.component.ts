@@ -102,10 +102,10 @@ if(this.receiverId!=null && this.receiverId!=undefined && this.receiverId!=''){
 
         this.userList = [];
 
-        for (let x in userList) {
+        for (let x of userList) {
           console.log(x);
 
-          let temp = { 'userId': userList[x].userId, 'name': userList[x].fullName, 'unread': 0, 'chatting': false };
+          let temp = { 'userId': x.userId, 'name': x.fullName, 'unread': 0, 'chatting': false };
 
           this.userList.push(temp);          
 
